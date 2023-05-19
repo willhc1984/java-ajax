@@ -40,5 +40,6 @@ public class SocialMetaTag implements Serializable{
 	public String toString() {
 		return "SocialMetaTag [site=" + site + ", title=" + title + ", url=" + url + ", image=" + image + "]";
 	}
-
+	
+	
 }
