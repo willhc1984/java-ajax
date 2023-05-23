@@ -52,6 +52,10 @@
 		  <artifactId>jsoup</artifactId>
 		  <version>1.16.1</version>
 		</dependency>
+		<dependency>
+     		<groupId>nz.net.ultraq.thymeleaf</groupId>
+    		<artifactId>thymeleaf-layout-dialect</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

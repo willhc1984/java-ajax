@@ -35,7 +35,7 @@ public class SocialMetaTagService {
 		SocialMetaTag tag = new SocialMetaTag();
 		
 		try {
-			Document doc = Jsoup.connect(url).get();
+			Document doc = Jsoup.connect(url).userAgent("Mozilla").get();
 			tag.setTitle(doc.head().select("meta[property=og:title]").attr("content"));
 			tag.setSite(doc.head().select("meta[property=og:site_name]").attr("content"));
 			tag.setImage(doc.head().select("meta[property=og:image]").attr("content"));
@@ -51,7 +51,7 @@ public class SocialMetaTagService {
 		SocialMetaTag tag = new SocialMetaTag();
 		
 		try {
-			Document doc = Jsoup.connect(url).get();
+			Document doc = Jsoup.connect(url).userAgent("Mozilla").get();
 	        tag.setTitle(doc.head().select("meta[name=twitter:title]").attr("content"));
 	        System.out.println(tag.getTitle());
 	        tag.setSite(doc.head().select("meta[name=twitter:site]").attr("content"));

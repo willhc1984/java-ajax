@@ -21,9 +21,9 @@ public class JavaAjaxApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-		SocialMetaTag tag = service.getSocialMetaTagByUrl("https://www.imdb.com/title/tt0285742/?ref_=nm_knf_c_4");
-		System.out.println(tag.toString());
-		
+//		SocialMetaTag tag = service.getSocialMetaTagByUrl("https://www.imdb.com/title/tt9362722/?ref_=rlm");
+//		System.out.println(tag.toString());
+//		
 	}
 
 }
