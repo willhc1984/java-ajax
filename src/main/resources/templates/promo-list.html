@@ -61,7 +61,7 @@
 							</div>
 							<div class="card-footer">
 								<small class="text-muted"
-									th:text="${#temporals.format(promo.dtCadastro, 'dd/MM/yyyy')}">9 mins</small>
+									th:text="${#temporals.format(promo.dataCadastro, 'dd/MM/yyyy')}">9 mins</small>
 							</div>
 						</div>
 					</div>
@@ -76,6 +76,6 @@
 		</main>
 	</div>
 
-	<script></script>
+	<script th:src="@{/js/promo-add.js}" th:fragment="js"></script>
 </body>
 </html>

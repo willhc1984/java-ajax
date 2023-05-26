@@ -84,7 +84,14 @@ $("#linkPromocao").on('change', function(){
 				$("#titulo").val("");
 				$("#site").text("");
 				$("#linkImagem").attr("src", "");
-				$("#loader-img").addClass("loader");				
+				$("#loader-img").addClass("loader");	
+				// removendo mensagens
+				$("span").closest('.error-span').remove();							
+				//remover bordas vermelhas
+				$("#categoria").removeClass("is-invalid");
+				$("#preco").removeClass("is-invalid");
+				$("#linkPromocao").removeClass("is-invalid");
+				$("#titulo").removeClass("is-invalid");			
 			},
 			success: function(data){
 				console.log(data);

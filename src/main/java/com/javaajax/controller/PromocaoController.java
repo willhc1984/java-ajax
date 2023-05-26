@@ -57,5 +57,11 @@ public class PromocaoController {
 		promocaoRepository.save(promocao);
 		return ResponseEntity.ok().build();
 	}
+	
+	@GetMapping("/list")
+	public String listarOfertas(ModelMap model) {
+		model.addAttribute("promocoes", promocaoRepository.findAll());
+		return "promo-list";
+	}
 
 }
