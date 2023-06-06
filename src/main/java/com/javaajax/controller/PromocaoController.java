@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.slf4j.LoggerFactory;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.javaajax.domain.Promocao;
 import com.javaajax.repository.CategoriaRepository;
 import com.javaajax.repository.PromocaoRepository;
+import com.javaajax.service.PromocaoDataTablesService;
 
 import ch.qos.logback.classic.Logger;
 
@@ -38,6 +40,18 @@ public class PromocaoController {
 	private CategoriaRepository categoriaRepository;
 	@Autowired
 	private PromocaoRepository promocaoRepository;
+	
+	@GetMapping("/tabela")
+	public String showTabela() {
+		return "promo-datatables";
+	}
+	
+	@GetMapping("/datatables/server")
+	public ResponseEntity<?> datatables(HttpServletRequest request){
+		Map<String, Object> data = new PromocaoDataTablesService().execute(promocaoRepository, request);
+		System.out.println(data);
+		return ResponseEntity.ok(data);
+	}
 	
 	@GetMapping("/add")
 	public String abrirCadastro(ModelMap model) {
