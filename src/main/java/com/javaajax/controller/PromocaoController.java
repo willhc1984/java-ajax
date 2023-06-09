@@ -123,5 +123,11 @@ public class PromocaoController {
 		model.addAttribute("promocoes", promocaoRepository.findBySite(site, pageRequest));
 		return "promo-card";
 	}
+	
+	@GetMapping("/delete/{id}")
+	public ResponseEntity<?> excluirPromocao(@PathVariable("id") Long id){
+		promocaoRepository.deleteById(id);
+		return ResponseEntity.ok().build();
+	}
 
 }

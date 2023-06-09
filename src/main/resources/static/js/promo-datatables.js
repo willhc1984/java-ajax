@@ -78,12 +78,28 @@ $(document).ready(function(){
 		
 	});
 	
-	//ação do botão de excluir
+	//ação do botão de excluir - abrir modal
 	$("#btn-excluir").on('click', function(){
 		if(isSelectedRow()){
 			$("#modal-delete").modal('show');
 			var id = getPromoId();
 		}
+	});
+	
+	//exclusão de uma promoção
+	$("#btn-del-modal").on('click', function(){
+		var id = getPromoId();
+		$.ajax({
+			method: "GET",
+			url: "/promocao/delete/" + id,
+			success: function(){
+				$("#modal-delete").modal('hide');
+				table.ajax.reload();
+			},
+			error: function(){
+				alert("Ops... ocorreu um erro, tente novamente.");
+			}
+		});
 	});
 	
 	function getPromoId(){
